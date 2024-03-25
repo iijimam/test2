@@ -10,4 +10,3 @@ RUN iris start IRIS \
     && iris session IRIS < /tmp/iris.script \
     && iris stop IRIS quietly
 
-#
