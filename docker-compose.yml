@@ -1,0 +1,18 @@
+version: '3.7'
+ 
+services:
+  iris:
+    #image: containers.intersystems.com/intersystems/iris:2023.3
+    build:
+      context: ./iris
+      dockerfile: Dockerfile
+    init: true
+    container_name: testiris
+    ports:
+       - "8082:1972"
+    environment:
+      - TZ=JST-9
+    volumes:
+      - ./iris:/ISC
+    command: --key /ISC/iris.key
+
